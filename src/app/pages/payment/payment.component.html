@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<br>
+<form class="mat-elevation-z8">
+    <mat-grid-list cols="2" rowHeight="500px">
+        <mat-grid-tile style="background-color: white">
+            <div class="controles-container1">
+                <img src="../../../assets/img/speakers/payment-gateway.jpg" style="width: 400px;">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile style="background-color: white;">
+            <div class="controles-container1">
+                <!-- <h2 style="margin-left: 70%;">₹ <span style="color: red;"></span></h2> -->
+                <h1 style="text-align: center; font-weight: 500; font-size: 30px;">Payment Information
+                    <mat-icon aria-hidden="false" aria-label="Example home icon"><span class="material-icons-outlined" style="font-size: 25px;">
+                            paid
+                        </span></mat-icon>
+                </h1>
+                <mat-form-field appearance="outline">
+                    <mat-label style="font-size: medium;">Enter the card number</mat-label>
+                    <input matInput placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+                    <!-- <img src="../../../assets/images/visa.png" width="50px" matSuffix style="margin-top: 0%;"> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label> Account Holder Name</mat-label>
+                    <input matInput placeholder="Name" maxlength="25" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Expiry Date</mat-label>
+                    <input matInput placeholder="MM/YY" maxlength="5" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>CCV</mat-label>
+                    <input type="password" matInput placeholder="ccv" maxlength="3" required>
+                </mat-form-field>
+                <button type="submit" mat-raised-button color="primary" (click)=" OipaDataPost()"> ₹ {{this.data.premium.value}} </button>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

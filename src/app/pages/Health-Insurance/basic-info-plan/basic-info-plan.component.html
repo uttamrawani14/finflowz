@@ -1,0 +1,154 @@
+<app-navbar></app-navbar>
+<div>
+    <form (ngSubmit)="formSubmit()" #myForm="ngForm">
+        <div class="container1">
+            <br>
+            <!-- <h1 style="padding-top: 1%;">Be Safe & Buy Best Health Insurance Plan</h1>
+            <hr class="hr"> -->
+            <div class="heading mat-elevation-z8" style="font-weight: 600;">Be Safe & Buy Best <span class="text">Health
+                    Insurance </span>Plan</div>
+            <br>
+            <div>
+
+                <div style="width: 90%;  margin-left: 5%; margin-top: 2%;padding: 0.9%;
+                border-radius: 0.30rem;" class="mat-elevation-z8">
+                    <div class="content">
+                        <div fxLayout="row wrap">
+                            <div fxFlex="20%" style="margin-left:1%">
+                                <h3 style="display:inline; color: black; margin-left: 2%;">Plan Type &nbsp;</h3>
+                                <p style="display:inline; color: gray; " matTooltip="choose the right health insurance plan depending upon the number of insured.
+                            1.Family Floater : Sum insured/Total cover is shared by all members in the policy.
+                            2.Individual : Each member will have separate Sum insured of theirr own.">
+                                    <u>What’s This?</u>
+                                </p>
+                                <div style="margin-top: 2%;">
+                                    <mat-radio-group aria-label="Select an option" [(ngModel)]="user.planType" name="planType" required>
+                                        <mat-radio-button value="Individual" (click)="openDialog()">Individual
+                                        </mat-radio-button>
+                                        <mat-radio-button value="Family Floater" style="margin-left: 4%;">Family Floater
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                            <mat-divider vertical style="height:40px;border: 1px solid #0c0c0c;margin-top: 1%;">
+                            </mat-divider>
+                            <div fxFlex="15%" style="margin-left: 1%;">
+                                <h3 style="display:inline; color: black; margin-left: 2%;">Family Size&nbsp;</h3>
+                                <mat-chip-list aria-label="Fish selection" style="text-align: center;" required>
+                                    <mat-chip *ngIf="show1==true">
+                                        {{this.user.type.viewValue}}&nbsp;<b>:</b>&nbsp;{{this.user.age}} years
+                                    </mat-chip>
+                                </mat-chip-list>
+                            </div>
+
+                            <mat-divider vertical style="height:40px;border: 1px solid #0c0c0c;margin-top: 1%;">
+                            </mat-divider>
+                            <div fxFlex="20%" style="margin-left: 1%;">
+                                <mat-form-field appearance="standard" floatLabel="always" style="width: 95%;">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput type="email" [(ngModel)]="user.email" minlength="15" name="email" required [pattern]="emailPattern" #offEmail="ngModel">
+
+                                </mat-form-field>
+
+                                <!-- <div *ngIf="offEmail.errors"> 
+                                    <div *ngIf="offEmail.errors.required"> 
+                                        Official Email required.
+                                    </div>			   
+                                    <div *ngIf="offEmail.errors.pattern"> 
+                                        Official Email not valid.
+                                    </div>	
+                                 </div>  -->
+                            </div>
+                            <mat-divider vertical style="height:40px;border: 1px solid #0c0c0c;margin-top: 1%;">
+                            </mat-divider>
+                            <div fxFlex="20%" style="margin-left:1%;">
+                                <mat-form-field appearance="standard" floatLabel="always" style="width: 95%;">
+                                    <mat-label>Mobile Number</mat-label>
+                                    <input matInput [(ngModel)]="user.mobile" name="mobile" maxlength="10" minlength="10" required>
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex="10%">
+                                <button type="submit" color="primary" mat-raised-button style="margin-top: 10%;" [disabled]="!myForm.form.valid">View
+                                    Plan</button>
+                            </div>
+                        </div>
+                        <mat-divider vertical></mat-divider>
+                    </div>
+                    <hr>
+                    <mat-checkbox style="margin-left:1% ;" [checked]="true">
+                        I authorize insurance company to call, send sms, email & whatsapp to offer information & services.
+                    </mat-checkbox>
+                </div>
+
+            </div>
+            <div *ngIf="show==true" style="width: 38%;  margin-left: 5%;margin-top: 1%; padding: 0.9%;
+            border-radius: 0.30rem;" class="mat-elevation-z8">
+                <form (ngSubmit)="formSubmit()" #myForms="ngForm">
+                    <div class="content">
+                        <div fxLayout="row wrap">
+                            <div fxFlex="40%">
+                                <mat-form-field appearance="standard" floatLabel="always" style="width: 95%;">
+                                    <mat-label>Type</mat-label>
+                                    <mat-select name="mop" [(ngModel)]="user.type" required>
+                                        <mat-option style="color: black" *ngFor="let type of types" [value]="type">
+                                            {{type.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                            </div>
+                            <div fxFlex="40%">
+                                <mat-form-field appearance="standard" floatLabel="always" style="width: 95%;">
+                                    <mat-label>Date of Birth</mat-label>
+                                    <input matInput type="date" [(ngModel)]="user.dob" name="dob" (change)="cal()" required>
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex="20%">
+                                <button mat-raised-button color="primary" style="margin-top: 15%;" (click)="openDialog1()">Done</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            <div>
+                <div style="width: 90%; background-color: white; margin-left: 5%;" class="mat-elevation-z8">
+                    <div class="content">
+                        <div fxLayout="row wrap">
+                            <div fxFlex="23%">
+                                <h2 class="text" style="text-align: center;margin-bottom: 0px;margin-top: 10px; font-size: 25px;">
+                                    <b>#1.5 Crore +</b>
+                                </h2>
+                                <h2 style="text-align: center;">Happy Customers</h2>
+                            </div>
+
+                            <div fxFlex="23%" style="margin-left: 1%;">
+                                <h2 class="text" style="text-align: center;margin-bottom: 0px;margin-top: 10px;font-size: 25px;">
+                                    <b>10,000 +</b>
+                                </h2>
+                                <h2 style="text-align: center;">Cashless Hospitals</h2>
+                            </div>
+
+                            <div fxFlex="23%" style="margin-left: 1%;">
+                                <h2 class="text" style="text-align: center;margin-bottom: 0px;margin-top: 10px; font-size: 25px;">
+                                    <b>
+                                        20 Minutes Cashless</b>
+                                </h2>
+                                <h2 style="text-align: center;">Claims approved*</h2>
+                            </div>
+
+                            <div fxFlex="23%" style="margin-left:1%;">
+                                <h2 class="text" class="text" style="text-align: center;margin-bottom: 0px;margin-top: 10px;font-size: 25px;">
+                                    <b>
+                                        4.4</b>
+                                </h2>
+                                <h2 style="text-align: center;">Customer Ratings</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

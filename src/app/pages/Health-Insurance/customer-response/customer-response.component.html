@@ -1,0 +1,132 @@
+<app-navbar>
+</app-navbar>
+<br>
+<form #startNewProcess="ngForm">
+    <mat-grid-list cols="3" rowHeight="301px" style="width: 90%;margin-left: 5%;" class="mat-elevation-z8">
+        <br>
+        <h1 style="text-align: center;" class="text"><b><u>Personal Details</u></b></h1>
+        <mat-grid-tile>
+            <div class="controles-container1" style="margin-left: 2%;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="Title" [(ngModel)]="title" name="title" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile</mat-label>
+                    <input matInput placeholder="Last Name" [(ngModel)]="mobile" name="mobile" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Age</mat-label>
+                    <input matInput placeholder="Age" [(ngModel)]="age1" name="age" required>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container1">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Last Name" [(ngModel)]="customer_name" name="name" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <input matInput placeholder="First Name" [(ngModel)]="gender" name="gender" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Id</mat-label>
+                    <input type="email" matInput placeholder="Email Id" [(ngModel)]="customer_email" name="c_email" required>
+                </mat-form-field>
+
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container1">
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" [(ngModel)]="customer_lastname" name="customer_lastname" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ID Type</mat-label>
+                    <input matInput placeholder="Id Type" [(ngModel)]="idname" name="idname">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Id Number</mat-label>
+                    <input matInput placeholder="Id Number" [(ngModel)]="idnumber" name="id">
+                </mat-form-field>
+
+
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+    <mat-grid-list cols="3" rowHeight="260px" style="width: 90%;margin-left: 5%;" class="mat-elevation-z8">
+        <br>
+        <h1 style="text-align: center;" class="text"><b><u>Professional Details</u></b></h1>
+        <mat-grid-tile>
+            <div class="controles-container1" style="margin-left: 2%;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Plan Name</mat-label>
+                    <input matInput placeholder="Plan Name" [(ngModel)]="planName" name="planName" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Sum Insured</mat-label>
+                    <input matInput placeholder="Sum Insured" [(ngModel)]="suminsured" name="suminsured" readonly>
+                </mat-form-field>
+
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container1">
+                <mat-form-field appearance="outline">
+                    <mat-label>Insurance Type</mat-label>
+                    <input matInput placeholder="Insurance Type" [(ngModel)]="insType" name="insType" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Payment Mode</mat-label>
+                    <input matInput placeholder="Plan Type" [(ngModel)]="paymentmod" name="paymentmod" readonly>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container1">
+                <mat-form-field appearance="outline">
+                    <mat-label>Policy Term</mat-label>
+                    <input matInput placeholder="Plan Type" [(ngModel)]="duration" name="planTerm" readonly>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Premium</mat-label>
+                    <input matInput placeholder="Sum Insured" [(ngModel)]="premium" name="premium" readonly>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+    <mat-grid-list cols="3" rowHeight="160px" style="width: 90%;margin-left: 5%;" class="mat-elevation-z8">
+        <br>
+        <h1 style="text-align: center;" class="text"><b><u>Updated Details</u></b></h1>
+        <mat-grid-tile>
+            <div class="controles-container1" style="margin-left: 2%;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Updated Premium</mat-label>
+                    <input matInput placeholder="0" [(ngModel)]="updatedPremium" name="updatedPremium" readonly>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container1">
+                <mat-form-field appearance="outline">
+                    <mat-label>Payable Amount</mat-label>
+                    <input matInput placeholder="Plan Type" [(ngModel)]="payable_amount" name="payable_amount" readonly>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+    <div>
+        <button mat-raised-button color="primary" class="btn" value="accepted" (click)="updatepolicy1()">Accept</button>
+        <button mat-raised-button color="accent" class="btn1" value="rejected" (click)="updatepolicy()" style="margin-left: 2%;">Reject</button>
+    </div>
+    <!-- (click)="moveTransaction2()" -->
+</form>
+<br>

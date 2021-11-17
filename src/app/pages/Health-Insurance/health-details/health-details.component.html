@@ -1,0 +1,279 @@
+<!-- <h3 style="color: gainsboro;margin: 5px 0 0px; margin-left: 30px;">Application Ref No : {{this.app}}</h3> -->
+<app-navbar></app-navbar>
+<div>
+    <!-- <h1 class="heading">Add details to purchase health insurance</h1>
+    <hr> -->
+    <br>
+    <div class="heading mat-elevation-z8" style="font-weight: 600;">Add details to purchase <span class="text">Health
+            Insurance </span>Plan</div>
+    <br>
+
+    <form (ngSubmit)="formSubmit()">
+        <mat-grid-list cols="3" rowHeight="435px" style="width: 95%;margin-left: 2.5%;" class="mat-elevation-z8 elevation">
+            <br>
+            <h1 style="text-align: center;" class="text"><b><u>Personal Details</u></b></h1>
+            <mat-grid-tile>
+                <div class="controles-container1" style="margin-left: 2%;">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Prefix</mat-label>
+                        <mat-select [(ngModel)]="user.prefix" name="prefix">
+                            <mat-option *ngFor="let prefix of prefixs" [value]="prefix">
+                                {{prefix.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Gender</mat-label>
+                        <mat-select [(ngModel)]="user.gender" name="gender">
+                            <mat-option *ngFor="let gender of genders" [value]="gender">
+                                {{gender.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Marital Status</mat-label>
+                        <mat-select [(ngModel)]="user.stauts" name="status">
+                            <mat-option *ngFor="let stauts of statuss" [value]="stauts">
+                                {{stauts.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Height (cm)</mat-label>
+                        <input matInput [(ngModel)]="user.height" name="height">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Id Type</mat-label>
+                        <input matInput [(ngModel)]="user.idtype" name="idtype">
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="Full name" [(ngModel)]="user.firstName" name="name">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput placeholder="Email Id" [(ngModel)]="user.mobile" name="mobile">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput name="dob" [(ngModel)]="user.dob" readonly>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Weight (kg)</mat-label>
+                        <input matInput [(ngModel)]="user.weight" name="weight" (keyup)="validatedBmi($event)">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Id Number</mat-label>
+                        <input matInput [(ngModel)]="user.idnum" name="idnumber">
+                    </mat-form-field>
+
+
+
+
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container1">
+
+                    <mat-form-field appearance="outline" style="margin-top: 5%;">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Full name" [(ngModel)]="user.lastName" name="lastname">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Id</mat-label>
+                        <input type="email" matInput placeholder="Email Id" [(ngModel)]="user.email" name="email">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Age</mat-label>
+                        <input matInput [(ngModel)]="user.age" name="age">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Legal Residence Country</mat-label>
+                        <mat-select [(ngModel)]="user.ResidenceCountry" name="prefix">
+                            <mat-option *ngFor="let residenceCountry of residenceCountrys" [value]="residenceCountry">
+                                {{residenceCountry.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Bmi</mat-label>
+                        <input matInput [(ngModel)]="user.bmi" name="bmi" readonly>
+                    </mat-form-field>
+
+                    <br><br>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <br>
+
+
+        <mat-grid-list cols="3" rowHeight="162px" style="width: 95%;margin-left: 2.5%;" class="mat-elevation-z8 elevation">
+            <br>
+            <h1 style="text-align: center;" class="text"><b><u>Professional Details</u></b></h1>
+            <mat-grid-tile>
+                <div class="controles-container1" style="margin-left: 2%;">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Occupation</mat-label>
+                        <mat-select [(ngModel)]="user.income" name="prefix">
+                            <mat-option *ngFor="let income of Income" [value]="income">
+                                {{income.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Industry Type</mat-label>
+                        <mat-select [(ngModel)]="user.designation" name="prefix">
+                            <mat-option *ngFor="let designation of Designation" [value]="designation">
+                                {{designation.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Salary Range</mat-label>
+                        <mat-select [(ngModel)]="user.salaryrange" name="prefix">
+                            <mat-option *ngFor="let salary of Salary" [value]="salary">
+                                {{salary.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+
+        <br>
+        <mat-grid-list cols="3" rowHeight="172px" style="width: 95%;margin-left: 2.5%;" class="mat-elevation-z8 elevation">
+            <br>
+            <h1 style="text-align: center;" class="text"><b><u>Lifestyle Details</u></b></h1>
+            <mat-grid-tile>
+                <div class="controles-container1" style="margin-left: 2%;">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Alcohol</mat-label>
+                        <mat-select [(ngModel)]="user.alcohol" name="prefix">
+                            <mat-option *ngFor="let alcohol of alcohols" [value]="alcohol">
+                                {{alcohol.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Smoking</mat-label>
+                        <mat-select [(ngModel)]="user.smoking" name="prefix">
+                            <mat-option *ngFor="let smoking of smokings" [value]="smoking">
+                                {{smoking.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tobacco</mat-label>
+                        <mat-select [(ngModel)]="user.tobacco" name="prefix">
+                            <mat-option *ngFor="let tobacco of tobacoos" [value]="tobacco">
+                                {{tobacco.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+
+
+
+        <br>
+
+        <mat-grid-list cols="3" rowHeight="162px" style="width: 95%;margin-left: 2.5%;" class="mat-elevation-z8 elevation">
+            <br>
+            <h1 style="text-align: center;" class="text"><b><u>Other Insurance</u></b></h1>
+            <mat-grid-tile>
+                <div class="controles-container1" style="margin-left: 2%;">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Other Insurance</mat-label>
+                        <mat-select [(ngModel)]="user.otherinsurance" name="prefix">
+                            <mat-option *ngFor="let otherinsurance of otherinsurances" [value]="otherinsurance">
+                                {{otherinsurance.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <br>
+        <div style="width: 95%;margin-left: 2.5%;" class="mat-elevation-z8">
+            <br>
+            <h1 style="text-align: center;" class="text"><b><u>Declaration of Good Health</u></b></h1>
+            <h2 style="padding-bottom: 0px;margin-left: 1.5%;" style="width: 90%;margin-left: 2%;"> Have you ever been diagnosed with, received any treatment or been referred for investigations related to any disease or disorder? </h2>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="Yes" (click)="addmore2()" style="margin-left: 2%;">Yes</mat-radio-button>
+                <mat-radio-button value="No" style="margin-left: 2%;" (click)="addmore3()" style="margin-left: 2%;">No
+                </mat-radio-button>
+            </mat-radio-group>
+            <br>
+            <mat-grid-list cols="1" rowHeight="300px" *ngIf="addmorenom1==true" style="width: 95%;margin-left: 2%;">
+                <mat-grid-tile>
+                    <div class="controles-container1" style="margin-left: 1.5%;">
+                        <div>
+                            <h3><b>1. Have you ever been diagnosed or have suffered from any disease or illness(like -
+                                    diabetes, high bp, cancer, CKD OR any other illness) ? </b></h3>
+                            <mat-radio-group aria-label="Select an option" [(ngModel)]="user.Health1" name="Health1" (change)="radioChangeHealth1($event)">
+                                <mat-radio-button value="Y" style="margin-left: 2%; margin-bottom: 1%;">Yes
+                                </mat-radio-button>
+                                <mat-radio-button value="N" style="margin-left: 4%;">No</mat-radio-button>
+                            </mat-radio-group>
+                            <h3><b>2. Are you currently taking any medication or drugs and / or have you been absent
+                                    from work for more than 10
+                                    days in the last two years due to health reasons?</b></h3>
+                            <mat-radio-group aria-label="Select an option" [(ngModel)]="user.Health2" name="Health2" (change)="radioChangeHealth2($event)">
+                                <mat-radio-button value="Y" style="margin-left: 2%;margin-bottom: 1%;">Yes
+                                </mat-radio-button>
+                                <mat-radio-button value="N" style="margin-left: 2%;">No</mat-radio-button>
+                            </mat-radio-group>
+                            <h3><b>3. Have you undergone any major or minor surgery or is any surgery planned in the
+                                    next 6 months?</b></h3>
+                            <mat-radio-group aria-label="Select an option" [(ngModel)]="user.Health3" name="Health3" (change)="radioChangeHealth3($event)">
+                                <mat-radio-button value="Y" style="margin-left: 2%;margin-bottom: 1%;">Yes
+                                </mat-radio-button>
+                                <mat-radio-button value="N" style="margin-left: 2%;">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <br>
+        </div>
+
+        <br>
+
+        <button type="submit" mat-raised-button color="primary" style="width: 30%; margin-left: 65%; margin-bottom: 2%;">Submit</button>
+        <br>
+    </form>
+</div>

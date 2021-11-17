@@ -1,0 +1,146 @@
+.card1 {
+    position: relative;
+    height: 205px;
+    background: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("../../../assets/img/speakers/1.jpg");
+    background-size: cover;
+    color: white;
+    transition: transform .5s ease;
+    cursor: pointer;
+    padding: 0.9%;
+    border-radius: 0.20rem;
+}
+
+.card1:hover {
+    transform: scale(1.1);
+    color: #ff6d00;
+}
+
+.card2 {
+    position: relative;
+    height: 205px;
+    background: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("../../../assets/img/speakers/2.jpg");
+    background-size: cover;
+    color: white;
+    transition: transform .5s ease;
+    cursor: pointer;
+    padding: 0.9%;
+    border-radius: 0.20rem;
+}
+
+.card2:hover {
+    transform: scale(1.1);
+    color: #ff6d00;
+}
+
+.card3 {
+    position: relative;
+    height: 205px;
+    background: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("../../../assets/img/speakers/3.jpg");
+    background-size: cover;
+    color: white;
+    transition: transform .5s ease;
+    cursor: pointer;
+    padding: 0.9%;
+    border-radius: 0.20rem;
+}
+
+.card3:hover {
+    transform: scale(1.1);
+    color: #ff6d00;
+}
+
+.card4 {
+    position: relative;
+    height: 205px;
+    background: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("../../../assets/img/speakers/4.jpg");
+    background-size: cover;
+    color: white;
+    transition: transform .5s ease;
+    cursor: pointer;
+    padding: 0.9%;
+    border-radius: 0.20rem;
+}
+
+.card4:hover {
+    transform: scale(1.1);
+    color: #ff6d00;
+}
+
+.card5 {
+    position: relative;
+    height: 205px;
+    background: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("../../../assets/img/speakers/5.jpg");
+    background-size: cover;
+    color: white;
+    transition: transform .5s ease;
+    cursor: pointer;
+    padding: 0.9%;
+    border-radius: 0.20rem;
+}
+
+.card5:hover {
+    transform: scale(1.1);
+    color: #ff6d00;
+}
+
+.card6 {
+    position: relative;
+    height: 205px;
+    background: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("../../../assets/img/speakers/6.jpg");
+    background-size: cover;
+    color: white;
+    transition: transform .5s ease;
+    cursor: pointer;
+    padding: 0.9%;
+    border-radius: 0.20rem;
+}
+
+.card6:hover {
+    transform: scale(1.1);
+    color: #ff6d00;
+}
+
+.card-user {
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.card-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.card-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.card.img {
+    border-radius: 50%;
+}
+
+p {
+    font-weight: 500;
+}
+
+.heading {
+    height: 60px;
+    padding-top: 20px;
+    width: 84%;
+    margin-left: 8%;
+    text-align: center;
+    font-size: 22px;
+}
+
+.text {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ff6d00 20%, #ffab40 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}

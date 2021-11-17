@@ -1,0 +1,7 @@
+.text {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ff6d00 20%, #ffab40 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
